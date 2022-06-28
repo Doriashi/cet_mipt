@@ -54,7 +54,6 @@ const string Cat::sTRICKS[NTRICKS] = {"jump", "juggle", "roll over"};
 const string Cat::sHunting[NHUNT] = {"fly", "butterfly", "bird"};
 const string Cat::sDress[NDRESS] = {"green t-shirt", "cool glasses"};
 
-
 void Cat::MyMood()
 {
     cout << "---------------------\n";
@@ -66,7 +65,7 @@ void Cat::MyMood()
 
 int Animal::Dead()
 {
-    if ((hunger > 10) & (bored > 10) & (tired > 10)) {cout << "Unfortunately, your cat is dead:(\n"; return 1;}
+    if ((hunger >= 10) & (bored >= 10) & (tired >= 10)) {cout << "Unfortunately, your cat is dead:(\n"; return 1;}
 }
 
 void Animal::passTime(int t)
@@ -82,6 +81,7 @@ void Animal::Sleep(int s)
     cout << "Zzzzz..\n";
     bored += s;
     tired -= s;
+    if (bored>=10) bored=10;
     if (tired<0) tired=0;
 }
 
@@ -96,6 +96,8 @@ void Cat::Hunt(int food, int p)
 {
     hunger += food;
     tired += p;
+    if (hunger>=10) hunger=10;
+    if (tired>=10) tired=10;
     string prey = sHunting[rand()%NHUNT];
     cout << "I have caught a huge " << prey << "! Did you see it? 0_0\n";
 }
@@ -106,6 +108,7 @@ void Cat::Play(int p)
     cout << "This is fun:D Love sunbeams so much!\n";
     bored -= p;
     tired += p;
+    if (tired>=10) tired=10;
     if (bored<0) bored=0;
 }
 
@@ -120,6 +123,7 @@ void Cat::Trick()
         string myTrick = sTRICKS[rand()%NTRICKS];
         cout << "Check this trick " << myTrick << "! I trained it for so long..\n";
         tired++;
+        if (tired>=10) tired=10;
     }
     else {
         cout << "No trick for you >-<\n";
