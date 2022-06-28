@@ -32,6 +32,7 @@
 
 В задаче используются квадратичные элементы
 ![MKE](https://github.com/Doriashi/cet_mipt/blob/main/plots/MKE.png)
+
 Скорость сходимости численного алгоритма: 4.06
 
 
