@@ -23,8 +23,9 @@
 
    - Реализация схемы Лакса
    - Реализация схемы Мак-Кормака
-![Laks](https://github.com/Doriashi/cet_mipt/blob/main/plots/wave_Laks.png)
-![MC](https://github.com/Doriashi/cet_mipt/blob/main/plots/wave_MC.png)
+###### Движение волны сжатия с течением времени
+![Laks](https://github.com/Doriashi/cet_mipt/blob/main/plots/Laks.gif)
+![MC](https://github.com/Doriashi/cet_mipt/blob/main/plots/MC.gif)
 #### 3. МКЭ для стационарной теплопроводности в однородном стержне
 - **finite_element_method.py**
 

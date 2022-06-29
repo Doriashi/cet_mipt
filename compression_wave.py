@@ -1,6 +1,6 @@
 import numpy as np
-import math
 import matplotlib.pyplot as plt
+from celluloid import Camera
 
 def f(x, x1, x2):  # начальная функция
     u1 = 1
@@ -51,51 +51,40 @@ def MacCormack(X, U, T, d_x, d_t):
     return U
 
 
+def printer(U, title, file_name):
+    fig = plt.figure(figsize=(10, 6))
+    plt.title(title, fontsize=15)
+    plt.xlabel("Значение координаты, вдоль которой осуществляется движение")
+    plt.ylabel("Решение")
+    ax = fig.gca()
+    ax.set_xticks(np.arange(0, 1, 0.1))
+    ax.set_yticks(np.arange(0, 1.2, 0.2))
+    plt.grid()
+    t_i = 0
+    t_max = 0.7  # время, до которого рисуем решения
+    camera = Camera(fig)
+    while t_i <= t_max:
+        plt.plot(X, U[int(t_i / d_t)], "-", color='blue')
+        t_i += 0.01
+        camera.snap()
+    animation = camera.animate()
+    animation.save(file_name, writer = 'imagemagick')
+    return 0
+
+
 a = 0  # условия
 b = 1
 x1 = 0.2
 x2 = 0.5
 d_x = 0.001
 d_t = 0.0005
-t = 1  # максимальное время
-
-N_t = int(t / 0.01)  # всего шагов по времени
+t = 0.8  # максимальное время
+U1, U2 =[], []
 
 X, T, U = start_bound_f(a, b, x1, x2, d_x, t, d_t)
 
-
 U1 = Laks(X, U, T, d_x, d_t)
-fig1 = plt.figure(figsize=(12, 6))
-plt.title("Схема Лакса", fontsize=15)
-plt.xlabel("Значение координаты, вдоль которой осуществляется движение")
-plt.ylabel("Решение")
-ax = fig1.gca()
-ax.set_xticks(np.arange(0, 1, 0.05))
-ax.set_yticks(np.arange(0, 1.5, 0.1))
-
-t_i = 0
-t_max = 0.6  # время, до которого рисуем решения
-while t_i <= t_max:
-    plt.plot(X, U1[int(t_i / d_t)], "-", color='orange')  #, label=round(t_i, 2))
-    t_i += 0.1
-plt.plot(X, U1[0], "-", color='red')
-plt.grid()
-plt.show()
+printer(U1, 'Схема Лакса', 'Laks.gif')
 
 U2 = MacCormack(X, U, T, d_x, d_t)
-fig2 = plt.figure(figsize=(12, 6))
-ax = fig2.gca()
-ax.set_xticks(np.arange(0, 1, 0.05))
-ax.set_yticks(np.arange(0, 1.5, 0.1))
-plt.title("Схема Мак-Кормака", fontsize=15)
-plt.xlabel("Значение координаты, вдоль которой осуществляется движение")
-plt.ylabel("Решение")
-
-
-t_i = 0
-while t_i <= t_max:
-    plt.plot(X, U2[int(t_i / d_t)], "-", color='orange')
-    t_i += 0.1
-plt.plot(X, U2[0], "-", color='red')
-plt.grid()
-plt.show()
+printer(U2, 'Схема Мак-Кормака', 'MC.gif')

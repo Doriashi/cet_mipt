@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def foo(x): # начальная функция
     d = 0.4
     if x > 0:
@@ -85,51 +86,6 @@ t2 = 50
 t3 = 100
 
 X, T, U = start_bound(x1, x2, d_x, T, d_t)
-
-'''
-fig1 = plt.figure(figsize=(12, 6))
-plt.title("Точное решение", fontsize=15)
-plt.xlabel("x")
-plt.ylabel("Решение")
-plt.plot(X, exact(X, t1, c), "-", color='red', label = t1)
-plt.plot(X, exact(X, t2, c), "-", color='orange', label = t2)
-plt.plot(X, exact(X, t3, c), "-", color='blue', label = t3)
-plt.legend()
-plt.show()
-
-U2 = corner(X, U, T, c, d_x, d_t)
-fig2 = plt.figure(figsize=(12, 6))
-plt.title("Явный левый уголок", fontsize=15)
-plt.xlabel("x")
-plt.ylabel("Решение")
-plt.plot(X, U2[t1], "-", color='red', label = t1)
-plt.plot(X, U2[t2], "-", color='orange', label = t2)
-plt.plot(X, U2[t3], "-", color='blue', label = t3)
-plt.legend()
-plt.show()
-
-U3 = TVD(X, U, T, c, d_x, d_t)
-fig3 = plt.figure(figsize=(12, 6))
-plt.title("TVD с лимитером (12)", fontsize=15)
-plt.xlabel("x")
-plt.ylabel("Решение")
-plt.plot(X, U3[t1], "-", color='red', label = t1)
-plt.plot(X, U3[t2], "-", color='orange', label = t2)
-plt.plot(X, U3[t3], "-", color='blue', label = t3)
-plt.legend()
-plt.show()
-
-U4 = Laks_Vend(X, U, T, c, d_x, d_t)
-fig4 = plt.figure(figsize=(12, 6))
-plt.title("Лакс-Вендрофф", fontsize=15)
-plt.xlabel("x")
-plt.ylabel("Решение")
-plt.plot(X, U4[t1], "-", color='red', label = t1)
-plt.plot(X, U4[t2], "-", color='orange', label = t2)
-plt.plot(X, U4[t3], "-", color='blue', label = t3)
-plt.legend()
-plt.show()
-'''
 
 t_all = 80
 fig5 = plt.figure(figsize=(12, 6))
