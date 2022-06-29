@@ -48,7 +48,7 @@ SCIP Solver
 
 [**Gurobi_lp.py**](https://github.com/Doriashi/cet_mipt/blob/main/Gurobi_lp.py) написана для решения линейных целочисленных задач, использует коммерческий пакет Gurobi, Gurobi Solver
 
-[**Gurobi_qp.py**](https://github.com/Doriashi/cet_mipt/blob/main/Gurobi_qp.py) написана для решения линейных целочисленных задач с квадратичными условиями, также использует коммерческий 
+[**Gurobi_qp.py**](https://github.com/Doriashi/cet_mipt/blob/main/Gurobi_qp.py) написана для решения квадратичных целочисленных задач с квадратичными условиями, также использует коммерческий 
 пакет Gurobi, Gurobi Solver
 
 Входные данные берутся из excel файла: 
