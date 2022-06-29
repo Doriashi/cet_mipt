@@ -1,7 +1,7 @@
 # cet_mipt
 ## Задачи по вычислительной математике
 #### 1. Линейное уравнение переноса
-- **transport_equation.py**
+[**transport_equation.py**](https://github.com/Doriashi/cet_mipt/blob/main/transport_equation.py)
 
 Решение уравнения адвекции с использованием разностных схем
    - Реализация схемы явный левый уголок
@@ -19,7 +19,7 @@
  |      Лакс-Вендрофф  |0.566645 | 0.094985|
 
 #### 2. Движение волны сжатия
-**compression_wave.py**
+[**compression_wave.py**](https://github.com/Doriashi/cet_mipt/blob/main/compression_wave.py)
 
    - Реализация схемы Лакса
    - Реализация схемы Мак-Кормака
@@ -27,7 +27,7 @@
 ![Laks](https://github.com/Doriashi/cet_mipt/blob/main/plots/Laks.gif)
 ![MC](https://github.com/Doriashi/cet_mipt/blob/main/plots/MC.gif)
 #### 3. МКЭ для стационарной теплопроводности в однородном стержне
-- **finite_element_method.py**
+[**finite_element_method.py**](https://github.com/Doriashi/cet_mipt/blob/main/finite_element_method.py)
 
 Задача о стационарной теплопроводности в однородном стержне, на концах которого поддерживается нулевая температура:
 
@@ -38,17 +38,17 @@
 
 
 ## Задача с использованием C++
-- **tamagotchi.cpp** - консольная игра-тамагочи, написанная с применением ООП. Игра моделирует поведение животного в реальном времени.<br>
+[**tamagotchi.cpp**](https://github.com/Doriashi/cet_mipt/blob/main/tamagotchi.cpp) - консольная игра-тамагочи, написанная с применением ООП. Игра моделирует поведение животного в реальном времени.<br>
 *Цель игры* - не допустить смерти животного, которая наступает при достижении максимального параметра в 
 индикаторах голода, скуки и усталости.
 
 ## Задачи комбинаторной оптимизации для решения задачи множественного рюкзака
-- **Or-tools.py** написана для решения линейных целочисленных задач оптимизации, использует пакет Google or-tools,
+[**Or-tools.py**](https://github.com/Doriashi/cet_mipt/blob/main/Or-tools.py) написана для решения линейных целочисленных задач оптимизации, использует пакет Google or-tools,
 SCIP Solver
 
-- **Gurobi_lp.py** написана для решения линейных целочисленных задач, использует коммерческий пакет Gurobi, Gurobi Solver
+[**Gurobi_lp.py**](https://github.com/Doriashi/cet_mipt/blob/main/Gurobi_lp.py) написана для решения линейных целочисленных задач, использует коммерческий пакет Gurobi, Gurobi Solver
 
-- **Gurobi_qp.py** написана для решения линейных целочисленных задач с квадратичными условиями, также использует коммерческий 
+[**Gurobi_qp.py**](https://github.com/Doriashi/cet_mipt/blob/main/Gurobi_qp.py) написана для решения линейных целочисленных задач с квадратичными условиями, также использует коммерческий 
 пакет Gurobi, Gurobi Solver
 
 Входные данные берутся из excel файла: 
