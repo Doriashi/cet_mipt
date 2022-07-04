@@ -105,11 +105,9 @@ while t < t_full:
         for j in range(Ny - 2, -1, -1):
             u[i, j] = P[j] * u[i, j + 1] + Q[j]   # Расчет температуры в промежуточном слое по времени в направлении Оу
 
-    sns.heatmap(u[::-1, ], cmap='coolwarm', ax=ax, cbar_ax=cbar_ax)
+    sns.heatmap(u[::-1, ], cmap='coolwarm')
     camera.snap()
 
 plt.show()
 animation = camera.animate(interval=150)
-animation.save('Heat_2.gif')
-#print(np.max(u))
-#plt.show()
+animation.save('Heat_new.gif')
