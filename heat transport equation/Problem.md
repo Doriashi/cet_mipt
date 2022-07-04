@@ -1,4 +1,7 @@
 # Problem
+
+#####Программный код: [**heat_eq.py**](https://github.com/Doriashi/cet_mipt/blob/main/heat%20transport%20equation/heat_eq.py)
+
 ### Постановка задачи
 
 Решается двумерное однородное уравнение теплопроводности в прямоугольной области.
